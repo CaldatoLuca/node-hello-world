@@ -2,7 +2,7 @@
 
 ### Introduzione a node
 
-Creare la prima appllicazione con **node.js** (_dotenv_ + _nodemon_)
+Creare la prima appllicazione con **node.js** (_dotenv_ (gestore di variabili in file .env) + _nodemon_ (permette il live reload del server))
 
 Configurare il server sul file _server.js_
 
