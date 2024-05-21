@@ -12,6 +12,10 @@ const quotes = [
 ];
 
 //funzione che ritorna una frase random dall' array
+/**
+ *
+ * @returns string
+ */
 function randomWord() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   return quotes[randomIndex];
