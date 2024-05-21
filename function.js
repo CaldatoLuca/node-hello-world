@@ -11,9 +11,8 @@ const quotes = [
   "Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead",
 ];
 
-//funzione che ritorna una frase random dall' array
 /**
- *
+ *funzione che ritorna una frase random dall' array
  * @returns string
  */
 function randomWord() {
