@@ -1,4 +1,3 @@
-// function.js
 const quotes = [
   "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
   "The way to get started is to quit talking and begin doing. - Walt Disney",
@@ -12,11 +11,13 @@ const quotes = [
   "Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead",
 ];
 
+//funzione che ritorna una frase random dall' array
 function randomWord() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   return quotes[randomIndex];
 }
 
+//esport la funzione cosi da usarla in server.js
 module.exports = {
   randomWord,
 };
