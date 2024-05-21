@@ -18,13 +18,58 @@ http
     //genera una citazione casuale a ogni richiesta (refresh)
     const random = randomWord();
 
+    if (req.url === "/favicon.ico") {
+      res.writeHead(404, {
+        "Content-Type": "text/html",
+      });
+
+      res.end();
+      return;
+    }
+
     //intestazione della risposta http
     res.writeHead(200, {
       "Content-Type": "text/html",
     });
 
     //invia la risposta
-    res.end(`<h1>${word}</h1> <h1>${random}</h1>`);
+    res.end(`<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Node Hello World</title>
+        <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+          body {
+            background-color: rgb(205, 232, 229);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          body h1:nth-child(1) {
+            color: rgb(77, 134, 156);
+            text-align: center;
+            margin-bottom: 20px;
+          }
+          body h1:nth-child(2) {
+            color: rgb(122, 178, 178);
+          }
+        </style>
+      </head>
+      <body>
+        <div>
+        <h1>${word}</h1>
+        <h1>${random}</h1>
+        </div>
+      </body>
+    </html>
+    `);
   })
   .listen(port, host, () => {
     //messaggio in console quando si avvia il server
