@@ -19,9 +19,7 @@ http
     const random = randomWord();
 
     if (req.url === "/favicon.ico") {
-      res.writeHead(404, {
-        "Content-Type": "text/html",
-      });
+      res.writeHead(404);
 
       res.end();
       return;
@@ -52,20 +50,45 @@ http
             justify-content: center;
             align-items: center;
           }
+          div{
+            text-align: center;
+          }
           body h1:nth-child(1) {
             color: rgb(77, 134, 156);
-            text-align: center;
             margin-bottom: 20px;
           }
           body h1:nth-child(2) {
             color: rgb(122, 178, 178);
+            margin-bottom: 10px;
+          }
+          button {
+            background-color: rgb(77, 134, 156);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+          }
+          button:hover {
+            background-color: rgb(122, 178, 178);
+          }
+          button:active {
+            background-color: rgb(50, 90, 110);
           }
         </style>
+        <script>
+          function reloadPage() {
+           window.location.reload();  
+          }
+        </script>
       </head>
       <body>
         <div>
         <h1>${word}</h1>
         <h1>${random}</h1>
+        <button onclick="reloadPage()">Generate Random Quote</button>
         </div>
       </body>
     </html>
